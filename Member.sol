@@ -9,5 +9,4 @@ string name; // The name of the member
 bool isCoach; // Whether the member is a coached or a client
 uint256 reputation; // The reputation of the member, determined by their participation in the DAO
 uint256 balance; // The balance of the member in the DAO's currency
-using SafeMath for uint256;
 }
