@@ -6,54 +6,19 @@ import { Link } from 'react-router-dom';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-window.addEventListener('load', () => {
-  const coachingRequestInput = document.getElementById('coaching-request-input');
-  const coachingRequestSubmit = document.getElementById('coaching-request-submit');
-  const coachingResponse = document.getElementById('coaching-response');
-
-  coachingRequestSubmit.addEventListener('click', () => {
-    const coachingRequest = coachingRequestInput.value;
-    if (coachingRequest) {
-      fetch('/coaching-dao', {
-        method: 'POST',
-        body: JSON.stringify({coachingRequest}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
-        .then(data => {
-          coachingResponse.innerHTML = `<p>${data.response}</p>`;
-        });
-    }
-  });
-});
-
-// Animations for UI
-(document).ready(function(){
-  (".button").on("click", function(){
-    (this).animate({
-      width: "100px",
-      height: "100px"
-    }, 500);
-  });
-});
-
-// Navigation Bar 
+// Navigation Bar
 const Navbar = () => {
   return (
-    <div className="navbar">
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul>
-    </div>
-  )
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/contact">Contact</Link>
+    </nav>
+  );
 };
 
 // Render Navigation Bar
-ReactDOM.render(<Navbar />, document.getElementById('root'));
+ReactDOM.render(<Navbar />, document.getElementById('nav'));
 
 // Search Bar
 const Searchbar = () => {
@@ -62,8 +27,8 @@ const Searchbar = () => {
       <input type="text" placeholder="Search..." />
       <button type="submit">Search</button>
     </div>
-  )
+  );
 };
 
 // Render Search Bar
-ReactDOM.render(<Searchbar />, document.getElementById('root'));
+ReactDOM.render(<Searchbar />, document.getElementById('search'));
