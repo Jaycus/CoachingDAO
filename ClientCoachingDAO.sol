@@ -132,4 +132,7 @@ Member storage member = members[memberAddress];
 require(member.memberAddress != address(0), "Member does not exist");
 
 // Update the member's name
-member
+// Update the member's name
+members[msg.sender].name = name;
+}
+}
