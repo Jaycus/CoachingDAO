@@ -4,11 +4,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>CoachingDAO</h1>
-      <div>
-        <h2>Smart Contract Details</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h1>Coaching DAO</h1>
+      <div id="coaching-request">
+        <input type="text" id="coaching-request-input" placeholder="Enter your coaching request" />
+        <button id="coaching-request-submit">Submit</button>
       </div>
+      <div id="coaching-response"></div>
     </div>
   );
 }
