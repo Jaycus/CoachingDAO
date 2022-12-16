@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { render, screen } from '@testing-library/react';
+import Navbar from './Navbar';
+import Searchbar from './Searchbar';
 
 function App() {
   const [coachingRequest, setCoachingRequest] = useState('');
@@ -35,11 +36,5 @@ function App() {
     </div>
   );
 }
-
-test('renders Coaching DAO title', () => {
-  render(<App />);
-  const titleElement = screen.getByText(/Coaching DAO/i);
-  expect(titleElement).toBeInTheDocument();
-});
 
 export default App;
